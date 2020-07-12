@@ -317,6 +317,9 @@ namespace GBM_Dashboard
 
         private void btnProcess_Click_1(object sender, EventArgs e)
         {
+            
+
+
             dataGridView1.Rows.Clear();
             for (int i = 0; i < videolist.Count; i++)
             {
@@ -359,7 +362,7 @@ namespace GBM_Dashboard
                 }
             }
 
-           // MessageBox.Show(str_camera_config_id);
+          // MessageBox.Show(str_camera_config_id);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -377,7 +380,8 @@ namespace GBM_Dashboard
                 //MessageBox.Show(row_count.ToString());
                 if (row_count == 0)
                 {
-                    MessageBox.Show("Records inserted");
+                    MessageBox.Show("Records Inserted Sucessfully !!!");
+                    dataGridView1.Rows.Clear();
                 }
                 else
                 {
@@ -393,8 +397,23 @@ namespace GBM_Dashboard
                     cmd.ExecuteReader();
                     cnn.Close();
                     row_count -= 1;
+                    
+
                 }
             }
+        }
+
+        private void btnUnselect_Click(object sender, EventArgs e)
+        {
+            gridView4.ClearSelection();
+            gridView1.ClearSelection();
+            gridView2.ClearSelection();
+            gridView3.ClearSelection();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+        dataGridView1.Rows.Clear();
         }
     }
 }

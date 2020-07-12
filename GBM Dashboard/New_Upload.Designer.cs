@@ -64,6 +64,8 @@
             this.dashboardDataSet1 = new GBM_Dashboard.dashboardDataSet1();
             this.adminTableAdapter1 = new GBM_Dashboard.dashboardDataSetTableAdapters.adminTableAdapter();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnUnselect = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.configurationtypetblBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardDataSet)).BeginInit();
@@ -241,7 +243,7 @@
             this.gridControl4.MainView = this.gridView4;
             this.gridControl4.Name = "gridControl4";
             this.gridControl4.Size = new System.Drawing.Size(279, 251);
-            this.gridControl4.TabIndex = 6;
+            this.gridControl4.TabIndex = 2;
             this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
             // 
@@ -282,7 +284,7 @@
             this.btnChooseFile.Location = new System.Drawing.Point(24, 33);
             this.btnChooseFile.Name = "btnChooseFile";
             this.btnChooseFile.Size = new System.Drawing.Size(95, 30);
-            this.btnChooseFile.TabIndex = 7;
+            this.btnChooseFile.TabIndex = 1;
             this.btnChooseFile.Text = "ChooseFile";
             this.btnChooseFile.UseVisualStyleBackColor = true;
             this.btnChooseFile.Click += new System.EventHandler(this.btnChooseFile_Click);
@@ -290,6 +292,7 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Title = "Select Videos";
             // 
             // dashboardDataSetBindingSource
             // 
@@ -302,16 +305,17 @@
             // 
             // btnProcess
             // 
-            this.btnProcess.Location = new System.Drawing.Point(1102, 353);
+            this.btnProcess.Location = new System.Drawing.Point(1102, 359);
             this.btnProcess.Name = "btnProcess";
-            this.btnProcess.Size = new System.Drawing.Size(106, 38);
-            this.btnProcess.TabIndex = 9;
+            this.btnProcess.Size = new System.Drawing.Size(95, 30);
+            this.btnProcess.TabIndex = 6;
             this.btnProcess.Text = "Process";
             this.btnProcess.UseVisualStyleBackColor = true;
             this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click_1);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Video_list,
@@ -360,19 +364,41 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(1102, 665);
+            this.btnSave.Location = new System.Drawing.Point(1102, 654);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(106, 36);
-            this.btnSave.TabIndex = 11;
+            this.btnSave.Size = new System.Drawing.Size(95, 30);
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnUnselect
+            // 
+            this.btnUnselect.Location = new System.Drawing.Point(949, 359);
+            this.btnUnselect.Name = "btnUnselect";
+            this.btnUnselect.Size = new System.Drawing.Size(95, 30);
+            this.btnUnselect.TabIndex = 7;
+            this.btnUnselect.Text = "Unselect";
+            this.btnUnselect.UseVisualStyleBackColor = true;
+            this.btnUnselect.Click += new System.EventHandler(this.btnUnselect_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(949, 654);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(95, 30);
+            this.btnClear.TabIndex = 9;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // New_Upload
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1314, 752);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnUnselect);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnProcess);
@@ -441,5 +467,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Site;
         private System.Windows.Forms.DataGridViewTextBoxColumn Camera;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnUnselect;
+        private System.Windows.Forms.Button btnClear;
     }
 }
