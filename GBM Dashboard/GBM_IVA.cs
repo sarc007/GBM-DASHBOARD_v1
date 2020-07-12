@@ -33,7 +33,7 @@ namespace GBM_Dashboard
 
             //lblLogo.Size = new Size(175, 56 );
             //lblLogo.Image = new Bitmap(image1, lblLogo.Size); ;
-            //string connetionString = "server=localhost;database=dashboard;uid=root;pwd=admin;";
+            ////string connetionString = "server=localhost;database=dashboard;uid=root;pwd=admin;";
             DbConnection dbCon = new DbConnection();
             string connetionString = dbCon.getConnection();
             MySqlConnection cnn = new MySqlConnection(connetionString);
