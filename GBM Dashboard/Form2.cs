@@ -1041,33 +1041,37 @@ namespace GBM_Dashboard
         
         private void gridView5_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            //try
-            //{
-            //    DataRow row = gridView5.GetDataRow(gridView5.FocusedRowHandle);
-            //    //ColumnView view =  gridView5;
-            //    //MessageBox.Show(row[2].ToString());
-            //    if (rdBtn_vid.Checked)
-            //    {
-            //        pictureEdit1.Visible = false;
-            //        axWindowsMediaPlayer1.Visible = true;
-            //        axWindowsMediaPlayer1.URL = row[1].ToString();
-            //        axWindowsMediaPlayer1.Ctlcontrols.play();
-            //        axWindowsMediaPlayer1.settings.setMode("loop", true);
-            //        //pictureEdit1.Image = Image.FromFile(row[1].ToString());
-            //    }
-            //    if (rdBtn_img.Checked)
-            //    {
-            //        axWindowsMediaPlayer1.Visible = false;
-            //        pictureEdit1.Visible = true;
-            //        //MessageBox.Show(row[2].ToString());
-            //        pictureEdit1.Image = Image.FromFile(row[2].ToString());
+            try
+            {
+                DataRow row = gridView5.GetDataRow(gridView5.FocusedRowHandle);
+                if (!(row == null))
+                {
+                    if (rdBtn_vid.Checked)
+                    {
+                        pictureEdit1.Visible = false;
+                        axWindowsMediaPlayer1.Visible = true;
+                        axWindowsMediaPlayer1.URL = row[1].ToString();
+                        axWindowsMediaPlayer1.Ctlcontrols.play();
+                        axWindowsMediaPlayer1.settings.setMode("loop", true);
+                        //pictureEdit1.Image = Image.FromFile(row[1].ToString());
+                    }
+                    if (rdBtn_img.Checked)
+                    {
+                        axWindowsMediaPlayer1.Visible = false;
+                        pictureEdit1.Visible = true;
+                        //MessageBox.Show(row[2].ToString());
+                        pictureEdit1.Image = Image.FromFile(row[2].ToString());
 
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("No Data");
-            //}
+                    }
+                }
+                //ColumnView view =  gridView5;
+                //MessageBox.Show(row[2].ToString());
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No Data");
+            }
         }
     }
 }
