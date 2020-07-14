@@ -273,6 +273,7 @@ namespace GBM_Dashboard
             // 
             // Content
             // 
+            this.Content.AutoScroll = true;
             this.Content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Content.Location = new System.Drawing.Point(0, 0);
             this.Content.Name = "Content";

@@ -21,7 +21,7 @@ namespace GBM_Dashboard
 {
 
 
-    public partial class New_Upload : Form
+    public partial class New_Upload : UserControl
     {
         DbConnection dbCon = new DbConnection();
         string connetionString = null;
@@ -341,8 +341,9 @@ namespace GBM_Dashboard
 
                     dataGridView1.Rows.Add(add_New_Row);
                 }
-
             }
+
+         
         }
 
         private void gridView3_SelectionChanged_1(object sender, DevExpress.Data.SelectionChangedEventArgs e)
@@ -365,7 +366,7 @@ namespace GBM_Dashboard
           // MessageBox.Show(str_camera_config_id);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             DbConnection dbCon = new DbConnection();
             string connetionString = dbCon.getConnection();
@@ -375,13 +376,12 @@ namespace GBM_Dashboard
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                //string constring = @"Data Source=.\SQL2008R2;Initial Catalog=AjaxSamples;Integrated Security=true";
-                //using (SqlConnection con = new SqlConnection(conn))
-                //MessageBox.Show(row_count.ToString());
                 if (row_count == 0)
                 {
                     MessageBox.Show("Records Inserted Sucessfully !!!");
                     dataGridView1.Rows.Clear();
+                    gridView4.ClearSelection();
+
                 }
                 else
                 {
@@ -401,6 +401,14 @@ namespace GBM_Dashboard
 
                 }
             }
+
+            // to clear selection after save
+            gridView4.ClearSelection();
+            gridView1.ClearSelection();
+            gridView2.ClearSelection();
+            gridView3.ClearSelection();
+          //  videolist.Clear();
+
         }
 
         private void btnUnselect_Click(object sender, EventArgs e)

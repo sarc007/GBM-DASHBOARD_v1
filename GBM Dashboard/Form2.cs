@@ -82,16 +82,6 @@ namespace GBM_Dashboard
             int[] dims = new int[5];
             foreach (Control _control in c)
             {
-                //index_i = this.Controls.IndexOf(_control);
-               /* index_i = -1;
-                for (int i = 0; i < control_dim.Count; i++)
-                {
-                    if ((int)control_dim[i][0] == (int)_control.Tag)
-                    {
-                        index_i = i;
-                        break;
-                    }
-                }*/
                 _control.Left = control_dim[index_i][1];
                 _control.Top = control_dim[index_i][2];
                 _control.Height = control_dim[index_i][3];
@@ -122,31 +112,15 @@ namespace GBM_Dashboard
         }
         private void load_ratios()
         {
-            //init_load_ratios();
             const double screenHeight = 1080.0;
             const double screenWidth = 1920.0;
-            //Main_Form new_form = new Main_Form();
-            //double height = new_form.Height;
-            //double width = new_form.Width;
             double height = Screen.AllScreens[0].Bounds.Height;
             double width = Screen.AllScreens[0].Bounds.Width;
             double height_ratio = height / screenHeight;
             double width_ratio = width / screenWidth;
-            //MessageBox.Show(height_ratio.ToString() + "   " + height.ToString());
-            //MessageBox.Show(width_ratio.ToString() + "   " + width.ToString());
-            //            MessageBox.Show( panel1.Left.ToString());
-            // (int(110 * width_ratio) + int(6 * width_ratio), 1), (int(300 * width_ratio), int(251 * height_ratio))
             var c = GetAll(this);
-            //MessageBox.Show("Total Controls: " + c.Count());
             foreach (Control _control in c)
             {
-                //if (_control.Visible == true )
-                //{
-                //    _control.Left = (int)(_control.Left * width_ratio);
-                //    _control.Top = (int)(_control.Top * height_ratio);
-                //    _control.Width = (int)(_control.Width * width_ratio);
-                //    _control.Height = (int)(_control.Height * height_ratio);
-                //}
                 _control.Left = (int)(_control.Left * width_ratio);
                 _control.Top = (int)(_control.Top * height_ratio);
                 _control.Width = (int)(_control.Width * width_ratio);
@@ -235,8 +209,6 @@ namespace GBM_Dashboard
                     rows.Add(gridView3.GetDataRow(selectedRowHandle));
                 DataRow row = rows[i] as DataRow;
                 camlist.Add((int)row[0]);
-                
-
             }
 
         }
@@ -253,7 +225,6 @@ namespace GBM_Dashboard
                     rows.Add(gridView4.GetDataRow(selectedRowHandle));
                 DataRow row = rows[i] as DataRow;
                 vidlist.Add((int)row[0]);
-
             }
 
         }
@@ -385,22 +356,22 @@ namespace GBM_Dashboard
 
         private void gridControl2_Load(object sender, EventArgs e)
         {
-           gridView2.SelectAll();
+           //gridView2.SelectAll();
         }
 
         private void gridControl3_Load(object sender, EventArgs e)
         {
-            gridView3.SelectAll();
+            //gridView3.SelectAll();
         }
 
         private void gridControl4_Load(object sender, EventArgs e)
         {
-            gridView4.SelectAll();
+            //gridView4.SelectAll();
         }
 
         private void gridControl5_Load(object sender, EventArgs e)
         {
-            gridView5.SelectAll();
+            //gridView5.SelectAll();
         }
 
         private void gridControl5_MouseDown(object sender, MouseEventArgs e)
@@ -1064,40 +1035,39 @@ namespace GBM_Dashboard
 
         private void gridView5_RowCellClick(object sender, RowCellClickEventArgs e)
         {
-            MessageBox.Show("Event clicked");
+            //MessageBox.Show("Event clicked");
         }
 
         
         private void gridView5_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            //MessageBox.Show("Event clicked123");
-            try
-            {
-                DataRow row = gridView5.GetDataRow(gridView5.FocusedRowHandle);
-                //ColumnView view =  gridView5;
-                //MessageBox.Show(row[2].ToString());
-                if (rdBtn_vid.Checked)
-                {
-                    pictureEdit1.Visible = false;
-                    axWindowsMediaPlayer1.Visible = true;
-                    axWindowsMediaPlayer1.URL = row[1].ToString();
-                    axWindowsMediaPlayer1.Ctlcontrols.play();
-                    axWindowsMediaPlayer1.settings.setMode("loop", true);
-                    //pictureEdit1.Image = Image.FromFile(row[1].ToString());
-                }
-                if (rdBtn_img.Checked)
-                {
-                    axWindowsMediaPlayer1.Visible = false;
-                    pictureEdit1.Visible = true;
-                    //MessageBox.Show(row[2].ToString());
-                    pictureEdit1.Image = Image.FromFile(row[2].ToString());
+            //try
+            //{
+            //    DataRow row = gridView5.GetDataRow(gridView5.FocusedRowHandle);
+            //    //ColumnView view =  gridView5;
+            //    //MessageBox.Show(row[2].ToString());
+            //    if (rdBtn_vid.Checked)
+            //    {
+            //        pictureEdit1.Visible = false;
+            //        axWindowsMediaPlayer1.Visible = true;
+            //        axWindowsMediaPlayer1.URL = row[1].ToString();
+            //        axWindowsMediaPlayer1.Ctlcontrols.play();
+            //        axWindowsMediaPlayer1.settings.setMode("loop", true);
+            //        //pictureEdit1.Image = Image.FromFile(row[1].ToString());
+            //    }
+            //    if (rdBtn_img.Checked)
+            //    {
+            //        axWindowsMediaPlayer1.Visible = false;
+            //        pictureEdit1.Visible = true;
+            //        //MessageBox.Show(row[2].ToString());
+            //        pictureEdit1.Image = Image.FromFile(row[2].ToString());
 
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No Data");
-            }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("No Data");
+            //}
         }
     }
 }

@@ -66,6 +66,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnUnselect = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.Content = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.configurationtypetblBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardDataSet)).BeginInit();
@@ -82,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.videoslisttblBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardDataSet1)).BeginInit();
+            this.Content.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -261,6 +263,7 @@
             this.gridView4.OptionsBehavior.Editable = false;
             this.gridView4.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
             this.gridView4.OptionsFilter.UseNewCustomFilterDialog = true;
+            this.gridView4.OptionsSelection.CheckBoxSelectorColumnWidth = 20;
             this.gridView4.OptionsSelection.MultiSelect = true;
             this.gridView4.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gridView4.OptionsView.ShowAutoFilterRow = true;
@@ -281,12 +284,13 @@
             // 
             // btnChooseFile
             // 
+            this.btnChooseFile.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnChooseFile.Location = new System.Drawing.Point(24, 33);
             this.btnChooseFile.Name = "btnChooseFile";
             this.btnChooseFile.Size = new System.Drawing.Size(95, 30);
             this.btnChooseFile.TabIndex = 1;
             this.btnChooseFile.Text = "ChooseFile";
-            this.btnChooseFile.UseVisualStyleBackColor = true;
+            this.btnChooseFile.UseVisualStyleBackColor = false;
             this.btnChooseFile.Click += new System.EventHandler(this.btnChooseFile_Click);
             // 
             // openFileDialog1
@@ -305,12 +309,13 @@
             // 
             // btnProcess
             // 
+            this.btnProcess.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnProcess.Location = new System.Drawing.Point(1102, 359);
             this.btnProcess.Name = "btnProcess";
             this.btnProcess.Size = new System.Drawing.Size(95, 30);
             this.btnProcess.TabIndex = 6;
             this.btnProcess.Text = "Process";
-            this.btnProcess.UseVisualStyleBackColor = true;
+            this.btnProcess.UseVisualStyleBackColor = false;
             this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click_1);
             // 
             // dataGridView1
@@ -364,42 +369,53 @@
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnSave.Location = new System.Drawing.Point(1102, 654);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 30);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.button1_Click);
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnUnselect
             // 
+            this.btnUnselect.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnUnselect.Location = new System.Drawing.Point(949, 359);
             this.btnUnselect.Name = "btnUnselect";
             this.btnUnselect.Size = new System.Drawing.Size(95, 30);
             this.btnUnselect.TabIndex = 7;
             this.btnUnselect.Text = "Unselect";
-            this.btnUnselect.UseVisualStyleBackColor = true;
+            this.btnUnselect.UseVisualStyleBackColor = false;
             this.btnUnselect.Click += new System.EventHandler(this.btnUnselect_Click);
             // 
             // btnClear
             // 
+            this.btnClear.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnClear.Location = new System.Drawing.Point(949, 654);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(95, 30);
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // Content
+            // 
+            this.Content.BackColor = System.Drawing.SystemColors.Window;
+            this.Content.Controls.Add(this.btnSave);
+            this.Content.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Content.Location = new System.Drawing.Point(0, 0);
+            this.Content.Name = "Content";
+            this.Content.Size = new System.Drawing.Size(1314, 752);
+            this.Content.TabIndex = 11;
             // 
             // New_Upload
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1314, 752);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnUnselect);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnProcess);
             this.Controls.Add(this.btnChooseFile);
@@ -407,8 +423,9 @@
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.gridControl2);
             this.Controls.Add(this.gridControl3);
+            this.Controls.Add(this.Content);
             this.Name = "New_Upload";
-            this.Text = "New_Upload";
+            this.Size = new System.Drawing.Size(1314, 752);
             this.Load += new System.EventHandler(this.New_Upload_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.configurationtypetblBindingSource)).EndInit();
@@ -426,6 +443,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.videoslisttblBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardDataSet1)).EndInit();
+            this.Content.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -469,5 +487,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnUnselect;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Panel Content;
     }
 }

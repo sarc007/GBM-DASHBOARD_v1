@@ -34,6 +34,12 @@ namespace GBM_Dashboard
             Configuration configuration = new Configuration();
             MainControlClass.showControl(configuration, Content);
         }
+        private void accordionControlElement5_Click(object sender, EventArgs e)
+        {
+            New_Upload new_Upload = new New_Upload();
+            MainControlClass.showControl(new_Upload, Content);
+        }
+
 
         private void panel1_Layout(object sender, LayoutEventArgs e)
         {
