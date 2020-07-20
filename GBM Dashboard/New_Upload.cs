@@ -62,6 +62,8 @@ namespace GBM_Dashboard
             /*gridView1.SelectAll();
             gridView2.SelectAll();
             gridView3.SelectAll();*/
+
+            //
         }
 
         private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
